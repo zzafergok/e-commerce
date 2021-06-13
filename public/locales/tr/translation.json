@@ -1,0 +1,7 @@
+{
+   "title": "react-i18next kullanarak react'a hoş geldiniz",
+   "description": {
+    "part1": "Başlamak için <1>src/App.js</1> dosyasını düzenleyin ve yeniden yüklemek üzere kaydedin.",
+    "part2": "Yukarıdaki düğmeleri kullanarak dili İngilizce ve Almanca arasında değiştirin."
+  }
+ }

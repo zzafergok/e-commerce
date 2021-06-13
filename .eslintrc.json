@@ -1,0 +1,58 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "node": true
+    },
+    "extends": [
+        "airbnb/base",
+        "prettier",
+        "eslint-config-prettier",
+        "plugin:node/recommended",
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "eslint-plugin-prettier"
+    ],
+    "rules": {
+        "prettier/prettier" : "error",
+        "no-unused-vars" : "warn",
+        "no-console" : "off",
+        "func-names" : "off",
+        "no-process-exit": "off",
+        "object-shortHand" : "off",
+        "class-methods-use-this" : "off",
+        "unicorn/no-array-reduce": "off",
+        "node/no-unsupported-features/es-syntax": [
+            "error",
+            {
+              "version": ">=13.0.0",
+              "ignores": ["modules"]
+            }
+          ],
+          "import/extensions": [
+            "error",
+            {
+              "js": "ignorePackages"
+            }
+          ]
+          
+    },
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "resolvePaths": ["node_modules/@types"],
+                "tryExtensions": [".js", ".json", ".node", ".ts", ".d.ts"]
+            }
+        }
+      }
+}

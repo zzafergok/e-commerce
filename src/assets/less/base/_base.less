@@ -1,0 +1,269 @@
+::selection {
+    background: @primary-4;
+    color: @primary-1;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+a:hover {
+    color: @primary-1;
+}
+
+img {
+    user-select: none;
+    max-width: 100%;
+}
+
+.@{class-prefix}-modal-p-24 {
+    .ant-modal-body {
+        padding: 24px;
+    }
+}
+
+// Line Height
+.@{class-prefix}-line-height-normal {
+    line-height: normal;
+}
+
+// Overflow Control
+.@{class-prefix}-overflow-hidden {
+    overflow: hidden;
+}
+
+.@{class-prefix}-overflow-scroll {
+    overflow: scroll;
+}
+
+// Flex Control
+.@{class-prefix}-d-flex {
+    display: flex;
+}
+
+.@{class-prefix}-flex-wrap {
+    flex-wrap: wrap;
+}
+
+.@{class-prefix}-d-flex-center {
+    display: flex !important;
+    align-items: center;
+}
+
+.@{class-prefix}-d-flex-full-center {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
+
+.@{class-prefix}-d-flex-between {
+    justify-content: space-between;
+}
+
+.@{class-prefix}-d-block {
+    display: block;
+}
+
+.@{class-prefix}-d-inline {
+    display: inline;
+}
+
+.@{class-prefix}-d-inline-block {
+    display: inline-block;
+}
+
+.@{class-prefix}-d-inline-flex {
+    display: inline-flex;
+}
+
+.@{class-prefix}-primary-shadow {
+    box-shadow: @primary-shadow;
+}
+
+//Position
+.@{class-prefix}-position-relative {
+    position: relative;
+}
+
+.@{class-prefix}-position-absolute {
+    position: absolute;
+}
+
+.@{class-prefix}-position-absolute-top-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.@{class-prefix}-position-absolute-bottom-right {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+//FloatS
+@float: ~ 'left',
+    ~ 'right',
+    ~ 'none';
+
+.float-classes(@prefix, @list) {
+    .iter(length(@list));
+
+    .iter(@i) when (@i > 0) {
+        .iter(@i - 1);
+        @pair: extract(@list, @i);
+        @value: extract(@pair, 1);
+
+        .@{class-prefix}-@{prefix}-@{value} {
+            float: @value;
+        }
+    }
+}
+
+.float-classes(@prefix, @list) {
+    .iter(length(@list));
+
+    .iter(@i) when (@i > 0) {
+        .iter(@i - 1);
+        @pair: extract(@list, @i);
+        @value: extract(@pair, 1);
+
+       
+        .@{class-prefix}-@{prefix}-xs-@{value} {
+            @media @xs{
+            float: @value;
+        }
+        }
+    }
+}
+
+.float-classes(float, @float);
+
+.@{class-prefix}-text-center {
+    text-align: center;
+}
+
+// Width
+.@{class-prefix}-w-100 {
+    width: 100%;
+}
+
+//Text Alignment
+.@{class-prefix}-text-xl-left {
+    @media @xl {
+        text-align: left !important;
+    }
+
+}
+
+.@{class-prefix}-text-lg-left {
+    @media @lg {
+        text-align: left !important;
+    }
+
+}
+
+.@{class-prefix}-text-md-left {
+    @media @md {
+        text-align: left !important;
+    }
+
+}
+
+.@{class-prefix}-text-sm-left {
+    @media @sm {
+        text-align: left !important;
+    }
+
+}
+
+.@{class-prefix}-text-xs-left {
+    @media @xs {
+        text-align: left !important;
+    }
+
+}
+
+.@{class-prefix}-text-xl-right {
+    @media @xl {
+        text-align: right !important;
+    }
+
+}
+
+.@{class-prefix}-text-lg-right {
+    @media @lg {
+        text-align: right !important;
+    }
+
+}
+
+.@{class-prefix}-text-md-right {
+    @media @md {
+        text-align: right !important;
+    }
+
+}
+
+.@{class-prefix}-text-sm-right {
+    @media @sm {
+        text-align: right !important;
+    }
+
+}
+
+.@{class-prefix}-text-xs-right {
+    @media @xs {
+        text-align: right !important;
+    }
+
+}
+
+.@{class-prefix}-text-right {
+    text-align: right;
+}
+
+.@{class-prefix}-text-left {
+    text-align: left;
+}
+
+// Height
+.@{class-prefix}-h-100 {
+    height: 100%;
+}
+
+//Align
+
+.@{class-prefix}-vertical-align-bottom {
+    vertical-align: bottom;
+}
+.@{class-prefix}-vertical-align-middle {
+    vertical-align: middle !important;
+}
+
+.@{class-prefix}-align-self-center{
+    align-self: center;
+}
+
+.@{class-prefix}-align-items-center{
+    align-items: center;
+}
+
+code {
+    padding: 4px;
+    border-radius: 4px;
+    margin: 0 1px;
+}
+
+.show-code {
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(0, 20px);
+    transition: 0.5s;
+
+    &-active {
+        opacity: 1;
+        visibility: visible;
+        transform: translate(0, 0);
+    }
+}

@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react'
 import ReactDOM from 'react-dom'
-import './index.css'
+// import './index.css'
+import './assets/less/e-commerce.less'
 import App from './App'
 
 import './i18n'

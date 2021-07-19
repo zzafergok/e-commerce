@@ -1,72 +1,93 @@
-import React, { useState } from 'react'
-import { Layout, Menu, Row } from 'antd'
+import React from 'react'
 import {
-  MenuUnfoldOutlined,
-  MenuFoldOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
-  UploadOutlined
-} from '@ant-design/icons'
+  Layout,
+  Row,
+  Breadcrumb,
+  Button,
+  Col,
+  Avatar,
+  Dropdown,
+  Menu
+} from 'antd'
+import { Link } from 'react-router-dom'
 import moment from 'moment'
 import 'moment/locale/tr'
+import avatar from '../../../assets/images/logo.png'
 
-const { Header, Sider, Content } = Layout
+const { Header, Content, Footer } = Layout
 
 export default function index({ children }) {
-  const [collapsed, setCollapsed] = useState(false)
   const localLocale = moment()
   const time = localLocale.format('LLL')
 
-  function toggle() {
-    setCollapsed(!collapsed)
-  }
+  const menu = (
+    <Menu>
+      <Menu.Item key="0">Telefon</Menu.Item>
+      <Menu.Item key="1">Bilgisayar</Menu.Item>
+      <Menu.Item key="3">Televizyon</Menu.Item>
+    </Menu>
+  )
 
   return (
     <>
       <Layout>
-        <Sider trigger={null} collapsible collapsed={collapsed} width={256}>
-          <div style={{ height: '60px' }} />
-          <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
-            <Menu.Item key="1" icon={<UserOutlined />}>
-              nav 1
-            </Menu.Item>
-            <Menu.Item key="2" icon={<VideoCameraOutlined />}>
-              nav 2
-            </Menu.Item>
-            <Menu.Item key="3" icon={<UploadOutlined />}>
-              nav 3
-            </Menu.Item>
-          </Menu>
-        </Sider>
-        <Layout className="site-layout">
-          <Header
-            className="site-layout-background"
-            style={{ backgroundColor: '#ffffff' }}
-          >
-            <Row justify="space-between">
-              <div style={{ paddingTop: '0px' }}>
-                {React.createElement(
-                  collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,
-                  {
-                    className: 'trigger',
-                    onClick: toggle
-                  }
-                )}
-              </div>
-              {time}
-            </Row>
-          </Header>
-          <Content
-            className="site-layout-background"
-            style={{
-              margin: '24px 16px',
-              padding: 24,
-              minHeight: 280
-            }}
-          >
+        <Header
+          className="da-bg-color-black-60 "
+          style={{
+            position: 'fixed',
+            zIndex: 1,
+            width: '96.5%'
+          }}
+        >
+          <Col className="da-d-flex-center" offset={9}>
+            <Avatar size={36} src={avatar} className="da-mr-32" />
+            <Dropdown
+              className="da-mr-16"
+              overlay={menu}
+              trigger={['click']}
+              placement="bottomLeft"
+              arrow
+            >
+              <Button
+                type="text"
+                className="ant-dropdown-link"
+                onClick={(e) => e.preventDefault()}
+              >
+                Categories
+              </Button>
+            </Dropdown>
+            <Button type="text" className="da-mr-8">
+              Campaigns
+            </Button>
+            <Button type="text" className="da-mr-8">
+              Solution Center
+            </Button>
+          </Col>
+          <Col className="da-d-flex-center da-mr-4" offset={6}>
+            <Button type="primary">Login</Button>
+          </Col>
+          <Col className="da-d-flex-center da-mr-4">
+            <Button type="primary">Order Basket</Button>
+          </Col>
+        </Header>
+        <Content
+          className=""
+          style={{
+            padding: '0 50px',
+            marginTop: 64
+          }}
+        >
+          <Breadcrumb className="da-d-flex da-mt-24">
+            <Breadcrumb.Item>Home</Breadcrumb.Item>
+            <Breadcrumb.Item>List</Breadcrumb.Item>
+          </Breadcrumb>
+          <div className="" style={{ padding: 24, minHeight: 380 }}>
             {children}
-          </Content>
-        </Layout>
+          </div>
+        </Content>
+        <Footer style={{ textAlign: 'center' }}>
+          Ant Design ©2018 Created by Ant UED
+        </Footer>
       </Layout>
     </>
   )

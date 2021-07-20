@@ -2,13 +2,13 @@ import React from 'react'
 import 'antd/dist/antd.css'
 import './App.css'
 
-import Home from './view/pages/home/index.jsx'
+import Routes from './Routes.jsx'
 
 function App() {
   return (
-    <div className="App">
-      <Home />
-    </div>
+    <>
+      <Routes />
+    </>
   )
 }
 

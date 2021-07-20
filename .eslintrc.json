@@ -8,7 +8,7 @@
         "airbnb/base",
         "prettier",
         "eslint-config-prettier",
-        "plugin:node/recommended",
+        // "plugin:node/recommended",
         "eslint:recommended",
         "plugin:react/recommended"
     ],
@@ -32,13 +32,13 @@
         "object-shortHand" : "off",
         "class-methods-use-this" : "off",
         "unicorn/no-array-reduce": "off",
-        "node/no-unsupported-features/es-syntax": [
-            "error",
-            {
-              "version": ">=13.0.0",
-              "ignores": ["modules"]
-            }
-          ],
+        // "node/no-unsupported-features/es-syntax": [
+        //     "error",
+        //     {
+        //       "version": ">=13.0.0",
+        //       "ignores": ["modules"]
+        //     }
+        //   ],
           "import/extensions": [
             "error",
             {

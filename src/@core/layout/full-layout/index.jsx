@@ -32,17 +32,17 @@ export default function index({ children }) {
     <>
       <Layout>
         <Header
-          className="da-bg-color-black-60 "
+          className="zg-bg-color-black-60 "
           style={{
             position: 'fixed',
             zIndex: 1,
             width: '96.5%'
           }}
         >
-          <Col className="da-d-flex-center" offset={9}>
-            <Avatar size={36} src={avatar} className="da-mr-32" />
+          <Col className="zg-d-flex-center" offset={9}>
+            <Avatar size={36} src={avatar} className="zg-mr-32" />
             <Dropdown
-              className="da-mr-16"
+              className="zg-mr-16"
               overlay={menu}
               trigger={['click']}
               placement="bottomLeft"
@@ -56,17 +56,17 @@ export default function index({ children }) {
                 Categories
               </Button>
             </Dropdown>
-            <Button type="text" className="da-mr-8">
+            <Button type="text" className="zg-mr-8">
               Campaigns
             </Button>
-            <Button type="text" className="da-mr-8">
+            <Button type="text" className="zg-mr-8">
               Solution Center
             </Button>
           </Col>
-          <Col className="da-d-flex-center da-mr-4" offset={6}>
+          <Col className="zg-d-flex-center zg-mr-4" offset={6}>
             <Button type="primary">Login</Button>
           </Col>
-          <Col className="da-d-flex-center da-mr-4">
+          <Col className="zg-d-flex-center zg-mr-4">
             <Button type="primary">Order Basket</Button>
           </Col>
         </Header>
@@ -77,7 +77,7 @@ export default function index({ children }) {
             marginTop: 64
           }}
         >
-          <Breadcrumb className="da-d-flex da-mt-24">
+          <Breadcrumb className="zg-d-flex zg-mt-24">
             <Breadcrumb.Item>Home</Breadcrumb.Item>
             <Breadcrumb.Item>List</Breadcrumb.Item>
           </Breadcrumb>

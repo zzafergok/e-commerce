@@ -56,12 +56,16 @@ export default function index({ children }) {
                 Categories
               </Button>
             </Dropdown>
-            <Button type="text" className="zg-mr-8">
-              Campaigns
-            </Button>
-            <Button type="text" className="zg-mr-8">
-              Solution Center
-            </Button>
+            <Link to="/campaigns">
+              <Button type="text" className="zg-mr-8">
+                Campaigns
+              </Button>
+            </Link>
+            <Link to="solution-center">
+              <Button type="text" className="zg-mr-8">
+                Solution Center
+              </Button>
+            </Link>
           </Col>
           <Col className="zg-d-flex-center zg-mr-4" offset={6}>
             <Button type="primary">Login</Button>

@@ -1,34 +1,36 @@
-import React, { useState, useEffect, Suspense } from 'react'
+import React from 'react'
 import 'antd/dist/antd.css'
 import './App.css'
-import RotateLoader from 'react-spinners/RotateLoader'
+// import Loader from 'react-loader-spinner'
 
-const Routes = React.lazy(() => import('./Routes.jsx'))
+// const Routes = React.lazy(() => import('./Routes.jsx'))
+import Routes from './Routes.jsx'
 
 function App() {
-  const [loading, setLoading] = useState(false)
+  // const [loading, setLoading] = useState(false)
 
-  useEffect(() => {
-    setLoading(true)
-    setTimeout(() => {
-      setLoading(false)
-    }, 4000)
-  }, [])
+  // useEffect(() => {
+  //   setLoading(true)
+  //   setTimeout(() => {
+  //     setLoading(false)
+  //   }, 4000)
+  // }, [])
   return (
-    <Suspense
-      fallback={
-        <RotateLoader
-          color={'#4A90E2'}
-          loading={loading}
-          size={15}
-          margin={2}
-        />
-      }
-    >
-      <>
-        <Routes />
-      </>
-    </Suspense>
+    // <Suspense
+    //   fallback={
+    //     <Loader
+    //       type="Puff"
+    //       color="#00BFFF"
+    //       height={100}
+    //       width={100}
+    //       timeout={10000}
+    //     />
+    //   }
+    // >
+    <>
+      <Routes />
+    </>
+    // </Suspense>
   )
 }
 

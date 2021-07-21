@@ -1,5 +1,7 @@
 import React from 'react'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+
+import CustomSwitch from './@core/components/custom-switch/index.jsx'
 
 import Home from './view/pages/home/index.jsx'
 import Profile from './view/pages/profile/index.jsx'
@@ -13,7 +15,7 @@ export default function Routes() {
   return (
     <>
       <Router>
-        <Switch>
+        <CustomSwitch>
           <Route path="/" component={Home} exact />
           <Route path="/profile" component={Profile} />
           <Route path="/order-basket" component={OrderBasket} />
@@ -21,7 +23,7 @@ export default function Routes() {
           <Route path="/solution-center" component={SolutionCenter} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
-        </Switch>
+        </CustomSwitch>
       </Router>
     </>
   )

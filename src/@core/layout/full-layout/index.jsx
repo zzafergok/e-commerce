@@ -1,14 +1,5 @@
 import React from 'react'
-import {
-  Layout,
-  Row,
-  Breadcrumb,
-  Button,
-  Col,
-  Avatar,
-  Dropdown,
-  Menu
-} from 'antd'
+import { Layout, Breadcrumb, Button, Col, Avatar, Dropdown, Menu } from 'antd'
 import { Link } from 'react-router-dom'
 import moment from 'moment'
 import 'moment/locale/tr'

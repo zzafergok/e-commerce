@@ -10,6 +10,7 @@ import Campaigns from './view/pages/campaigns/index.jsx'
 import SolutionCenter from './view/pages/solution-center/index.jsx'
 import Login from './view/pages/authentication/login/index.jsx'
 import Register from './view/pages/authentication/register/index.jsx'
+import ErrorPage from './view/pages/404page/index.jsx'
 
 export default function Routes() {
   return (
@@ -23,6 +24,7 @@ export default function Routes() {
           <Route path="/solution-center" component={SolutionCenter} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
+          <Route path="*" component={ErrorPage} />
         </CustomSwitch>
       </Router>
     </>

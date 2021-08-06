@@ -12,6 +12,7 @@ import Login from './view/pages/authentication/login/index.jsx'
 import Register from './view/pages/authentication/register/index.jsx'
 import ErrorPage from './view/pages/404page/index.jsx'
 import Empty from './view/pages/empty/index.jsx'
+import EmptyTwo from './view/pages/empty2/index.jsx'
 
 export default function Routes() {
   return (
@@ -26,6 +27,7 @@ export default function Routes() {
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           <Route path="/empty" component={Empty} />
+          <Route path="/empty-2" component={EmptyTwo} />
           <Route path="*" component={ErrorPage} />
         </CustomSwitch>
       </Router>
